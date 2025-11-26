@@ -6,24 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Document</title>
+    <script type="importmap">
+  {
+    "imports": {
+      "animejs": "./node_modules/animejs/dist/bundles/anime.esm.min.js"
+    }
+  }
+  </script>
+    <script src="./src/js/script.js" type="module"></script>
 </head>
 
-<body class="h-75">
+<body class="h-75 bg-dark">
 
     <main class=" col-9 row bg-dark mx-auto mt-3 d-flex h-100">
-        <div class="col-4 bg-info">
-            <div class="h-50 bg-primary border"></div>
-            <div class="h-25 bg-primary border"></div>
-            <div class="h-25 bg-primary border"></div>
+        <div class="col-4">
+            <div class="h-50 bg-dark border">
+                <div class="dot"></div>
+            </div>
+            <div class="h-25 bg-dark border"></div>
+            <div class="h-25 bg-dark border"></div>
 
         </div>
 
-
-        <div class="col-8 bg-info">
-            <div class="h-25 bg-primary border"></div>
-            <div class="h-25 bg-primary border"></div>
-            <div class="h-25 bg-primary border"></div>
-            <div class="h-25 bg-primary border"></div>
+        <div class="col-8">
+            <div class="h-25 dark border"></div>
+            <div class="h-25 dark border"></div>
+            <div class="h-25 dark border"></div>
+            <div class="h-25 bg-dark border"></div>
         </div>
     </main>
 </body>
