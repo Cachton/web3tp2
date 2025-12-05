@@ -17,55 +17,13 @@
   <script src="./src/js/script.js" type="module"></script>
 </head>
 
-<body class="h-75 bg-dark">
+<body>
 
-  <main class=" col-9 row bg-dark mx-auto mt-3 d-flex h-100">
-
-    <div class="col-4">
-      <div class="h-50 bg-dark border">
-
-        <div id="container">
-
-          <div>
-            <canvas></canvas>
-          </div>
-
-        </div>
-
-
-      </div>
-      <div class="h-50 bg-dark border pt-5">
-        <div class="chart-container d-flex flex-column">
-          <div id="elementA">
-            <canvas id="theBarOne01"></canvas>
-          </div>
-          <div id="elementB" style="display:none;">
-            <canvas id="theBarOne02"></canvas>
-          </div>
-          <button id="swapBtn" class="mx-auto">---></button>
-        </div>
-
-
-      </div>
-
-    </div>
-
-    <div class="col-8">
-
-
-      <div class="h-50 dark border">
-        <canvas id="theLineOne"></canvas>
-      </div>
-
-      <div class="h-25 dark border">
-      </div>
-
-      <div class="h-25 bg-dark border">
-
-      </div>
-
-
-    </div>
+  <main id="main_container">
+    <canvas id="maps_radar"></canvas>
+    <canvas id="theBarOne01"></canvas>
+    <div id="theBarOne02"></div>
+    <div id="en_bas_droite"></div>
   </main>
 </body>
 

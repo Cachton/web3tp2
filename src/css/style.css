@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    height: 98vh;
+    width: auto;
+    display: flex;
+}
+
+#main_container {
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    column-gap: 50px;
+}
+
+#maps_radar {
+    background-color: aqua;
+}
+
+#theBarOne01 {
+    background-color: green;
+}
+
+#chart_lignes {
+    background-color: aqua;
+}
+
+#en_bas_droite {
+    background-color: blue;
+}
