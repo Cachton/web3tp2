@@ -18,12 +18,29 @@
 </head>
 
 <body>
+  <main class="grid_tp">
 
-  <main id="main_container">
-    <canvas id="maps_radar"></canvas>
-    <canvas id="theBarOne01"></canvas>
-    <div id="theBarOne02"></div>
-    <div id="en_bas_droite"></div>
+    <!-- Case 1 : haut gauche -->
+    <div class="carre maps_radar">
+      <canvas id="maps_radar_canvas"></canvas>
+    </div>
+
+    <!-- Case 2 : haut droite — TON CHART -->
+    <div class="carre">
+      <canvas id="theBarOne01"></canvas>
+      <canvas id="theBarOne02" style="display: none;"></canvas>
+    </div>
+
+    <!-- Case 3 : bas gauche -->
+    <div class="carre">
+      <canvas id="theLineOne"></canvas>
+    </div>
+
+    <!-- Case 4 : bas droite -->
+    <div class="carre en_bas_droite">
+      <button id="swapbtn">Action</button>
+    </div>
+
   </main>
 </body>
 
