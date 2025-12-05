@@ -7,38 +7,38 @@
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <title>Document</title>
   <link rel="stylesheet" href="./src/css/style.css">
-  <script type="importmap">
-  {
-    "imports": {
-      "animejs": "./node_modules/animejs/dist/bundles/anime.esm.min.js"
-    }
-  }
-  </script>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.css" />
+  <script type="importmap"> { "imports": { "maplibre-gl": "https://esm.sh/maplibre-gl@5.13.0" } } </script>
+  <script type="module" src="./src/js/map.js"></script>
   <script src="./src/js/script.js" type="module"></script>
 </head>
 
 <body>
   <main class="grid_tp">
 
-    <!-- Case 1 : haut gauche -->
+    <!-- Case haut gauche -->
     <div class="carre maps_radar">
       <canvas id="maps_radar_canvas"></canvas>
+      <div id="carte" style="display: none;"></div>
     </div>
 
-    <!-- Case 2 : haut droite — TON CHART -->
+    <!-- Case haut droite -->
     <div class="carre">
       <canvas id="theBarOne01"></canvas>
       <canvas id="theBarOne02" style="display: none;"></canvas>
     </div>
 
-    <!-- Case 3 : bas gauche -->
+    <!-- Case bas gauche -->
     <div class="carre">
-      <canvas id="theLineOne"></canvas>
+      <canvas id="thelineone" style="display: none;"></canvas>
+      <div id="carte"></div> <!-- visible par défaut -->
     </div>
 
-    <!-- Case 4 : bas droite -->
+
+    <!-- Case bas droite -->
     <div class="carre en_bas_droite">
-      <button id="swapbtn">Action</button>
+      <button id="swapbtnline">Action Graph haut droite</button>
+      <button id="swapbtnmap">Action Graph gauche</button>
     </div>
 
   </main>

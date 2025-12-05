@@ -20,6 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 /* graphiques dans les boites */
@@ -41,4 +42,10 @@
 
 .en_bas_droite button:hover {
     background-color: #666;
+}
+
+#carte,
+#thelineone {
+    width: 100%;
+    height: 100%;
 }

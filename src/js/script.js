@@ -1,6 +1,7 @@
 import Chart from "https://esm.sh/chart.js/auto";
+import maplibregl from "maplibre-gl";
 
-// radar 
+// radar
 new Chart(document.getElementById("maps_radar_canvas"), {
     type: "radar",
     data: {
@@ -18,11 +19,7 @@ new Chart(document.getElementById("maps_radar_canvas"), {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-            legend: {
-                labels: {
-                    color: "white"
-                }
-            }
+            legend: { labels: { color: "white" } }
         },
         scales: {
             r: {
@@ -34,8 +31,8 @@ new Chart(document.getElementById("maps_radar_canvas"), {
     }
 });
 
-// bar graph 1
-new Chart(document.getElementById("theBarOne01"), {
+// bar chart 1
+const barChart1 = new Chart(document.getElementById("theBarOne01"), {
     type: "bar",
     data: {
         labels: ["MATCHES", "WINS", "TIES", "LOSS"],
@@ -53,15 +50,12 @@ new Chart(document.getElementById("theBarOne01"), {
             y: { beginAtZero: true, ticks: { color: "white" } },
             x: { ticks: { color: "white" } }
         },
-        plugins: {
-            legend: { labels: { color: "white" } }
-        }
+        plugins: { legend: { labels: { color: "white" } } }
     }
 });
 
-// bar graph 2
-const ctxBar2 = document.getElementById("theBarOne02").getContext("2d");
-const barChart2 = new Chart(ctxBar2, {
+// bar chart 2
+const barChart2 = new Chart(document.getElementById("theBarOne02"), {
     type: "bar",
     data: {
         labels: ["KILLS", "DEATHS", "ASSISTS", "ROUNDS"],
@@ -83,9 +77,8 @@ const barChart2 = new Chart(ctxBar2, {
     }
 });
 
-
-// line chart
-new Chart(document.getElementById("theLineOne"), {
+// line
+const lineChart = new Chart(document.getElementById("thelineone"), {
     type: "line",
     data: {
         labels: ["WEEKS 1-10", "WEEKS 11-20", "WEEKS 21-30", "WEEKS 31-40", "WEEKS 41-50", "WEEKS 51-60", "WEEKS 61-70"],
@@ -105,23 +98,52 @@ new Chart(document.getElementById("theLineOne"), {
             y: { beginAtZero: true, ticks: { color: "white" } },
             x: { ticks: { color: "white" } }
         },
-        plugins: {
-            legend: { labels: { color: "white" } }
-        }
+        plugins: { legend: { labels: { color: "white" } } }
     }
 });
 
-// bouton switch de graph
-document.getElementById("swapbtn").addEventListener("click", function () {
-    const elA = document.getElementById("theBarOne01");
-    const elB = document.getElementById("theBarOne02");
 
-    // Toggle quel graph est visible
-    if (elA.style.display !== "none") {
-        elA.style.display = "none";
-        elB.style.display = "block";
+// toggle les deux bar charts en haut à droite
+document.getElementById("swapbtnline").addEventListener("click", () => {
+    const c1 = document.getElementById("theBarOne01");
+    const c2 = document.getElementById("theBarOne02");
+
+    if (c1.style.display !== "none") {
+        c1.style.display = "none";
+        c2.style.display = "block";
     } else {
-        elA.style.display = "block";
-        elB.style.display = "none";
+        c1.style.display = "block";
+        c2.style.display = "none";
+    }
+});
+
+// map
+let mapInstance = null;
+
+function initMap() {
+    if (!mapInstance) {
+        mapInstance = new maplibregl.Map({
+            container: "carte",
+            style: "https://tiles.openfreemap.org/styles/bright",
+            center: [-73.8462195, 45.6125882],
+            zoom: 9
+        });
+    } else {
+        mapInstance.resize();
+    }
+}
+
+// toggle line chart ou carte
+document.getElementById("swapbtnmap").addEventListener("click", () => {
+    const line = document.getElementById("thelineone");
+    const mapDiv = document.getElementById("carte");
+
+    if (mapDiv.style.display !== "none") {
+        mapDiv.style.display = "none";
+        line.style.display = "block";
+    } else {
+        line.style.display = "none";
+        mapDiv.style.display = "block";
+        mapInstance.resize();
     }
 });
