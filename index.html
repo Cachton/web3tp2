@@ -11,35 +11,46 @@
   <script type="importmap"> { "imports": { "maplibre-gl": "https://esm.sh/maplibre-gl@5.13.0" } } </script>
   <script type="module" src="./src/js/map.js"></script>
   <script src="./src/js/script.js" type="module"></script>
+  <script src="./src/js/animejs.js" type="module"></script>
+  <script src="./src/js/bootstrap.js" type="module"></script>
+  <script src="./src/js/chartjs.js" type="module"></script>
+  <script src="./src/js/maplibre.js" type="module"></script>
+  <script src="./src/js/tonejs.js" type="module"></script>
+  <script src="./src/js/vfx.js" type="module"></script>
+
+  <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
+<link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
 </head>
 
 <body>
   <main class="grid_tp">
 
-    <!-- Case haut gauche -->
+    <!-- case haut gauche -->
     <div class="carre maps_radar">
       <canvas id="maps_radar_canvas"></canvas>
       <div id="carte" style="display: none;"></div>
     </div>
 
-    <!-- Case haut droite -->
+    <!-- case haut droite -->
     <div class="carre">
       <canvas id="theBarOne01"></canvas>
       <canvas id="theBarOne02" style="display: none;"></canvas>
     </div>
 
-    <!-- Case bas gauche -->
+    <!-- case bas gauche -->
     <div class="carre">
       <canvas id="thelineone" style="display: none;"></canvas>
-      <div id="carte"></div> <!-- visible par défaut -->
+      <div id='map' style='width: 100%; height: 100%;'></div>
+
     </div>
 
 
-    <!-- Case bas droite -->
+    <!-- case bas droite -->
     <div class="carre en_bas_droite">
       <button id="swapbtnline">Action Graph haut droite</button>
       <button id="swapbtnmap">Action Graph gauche</button>
     </div>
+
 
   </main>
 </body>

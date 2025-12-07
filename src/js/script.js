@@ -118,20 +118,13 @@ document.getElementById("swapbtnline").addEventListener("click", () => {
 });
 
 // map
-let mapInstance = null;
+var map = new maplibregl.Map({
+  container: 'map',
+  style: 'https://api.maptiler.com/maps/toner-v2/style.json?key=CA8vNqMfqMEhsx7i7xpz', 
+  center: [-74.5, 40], 
+  zoom: 9 
+});
 
-function initMap() {
-    if (!mapInstance) {
-        mapInstance = new maplibregl.Map({
-            container: "carte",
-            style: "https://tiles.openfreemap.org/styles/bright",
-            center: [-73.8462195, 45.6125882],
-            zoom: 9
-        });
-    } else {
-        mapInstance.resize();
-    }
-}
 
 // toggle line chart ou carte
 document.getElementById("swapbtnmap").addEventListener("click", () => {
@@ -147,3 +140,4 @@ document.getElementById("swapbtnmap").addEventListener("click", () => {
         mapInstance.resize();
     }
 });
+
