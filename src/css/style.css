@@ -1,6 +1,11 @@
 :root {
-  --bs-dark: #0a0a0a;  
-    font-size: 1.2rem; 
+    --bs-dark: #0a0a0a;
+    font-size: 1.2rem;
+}
+
+html,
+body {
+    overflow-x: hidden;
 }
 
 body {
@@ -11,9 +16,7 @@ body {
 .grid_tp {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    /* gauche = 1, droite = 2 */
     grid-template-rows: 1fr 1fr;
-    /* lignes égales */
     gap: 20px;
     width: 90vw;
     height: 80vh;
@@ -23,14 +26,14 @@ body {
 /* style des boites */
 .carre {
     background-color: #0a0a0a;
-    border: 2px solid white;
+    border: 2px solid rgb(0, 255, 0);
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    box-shadow: 0 0 10px 1px white
+    box-shadow: 0 0 10px 1px rgb(0, 255, 0)
 }
 
 /* graphiques dans les boites */
@@ -47,13 +50,14 @@ body {
     background-color: #0a0a0a;
     border: 2px solid white;
     border-radius: 4px;
-    cursor: pointer;
+    width: 70%;
 }
 
 /* hover des boutons*/
 .en_bas_droite button:hover {
     background-color: white;
     color: black;
+    box-shadow: 0 0 20px 1px white;
 }
 
 /* les cartes remplissent l<espace disponible*/
@@ -73,7 +77,7 @@ body {
 .bas_droite_gauche,
 .bas_droite_milieu,
 .bas_droite_droite {
-    flex: 1;  
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,6 +87,7 @@ body {
 .bas_droite_gauche {
     border-right: 2px solid white;
 }
+
 .bas_droite_droite {
     border-left: 2px solid white;
 }
@@ -95,14 +100,22 @@ body {
 }
 
 .zdog-canvas {
-  display: flex;
-  justify-content: center;
-  width: 40%;
-  height: 70%;
-  max-height: 150px;
-  margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 70%;
+    max-height: 150px;
+    margin: auto;
 }
 
 svg {
     box-shadow: 0 0 20px 1px white;
+}
+
+.rotating_square {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    background-color: white;
+    margin: auto;
 }

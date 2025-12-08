@@ -2,15 +2,15 @@
 
 // toggle les deux bar charts en haut à droite
 document.getElementById("swapbtnline").addEventListener("click", () => {
-    const c1 = document.getElementById("theBarOne01");
-    const c2 = document.getElementById("theBarOne02");
+    const barChart1 = document.getElementById("theBarOne01");
+    const barChart2 = document.getElementById("theBarOne02");
 
-    if (c1.style.display !== "none") {
-        c1.style.display = "none";
-        c2.style.display = "block";
+    if (barChart1.style.display !== "none") {
+        barChart1.style.display = "none";
+        barChart2.style.display = "block";
     } else {
-        c1.style.display = "block";
-        c2.style.display = "none";
+        barChart1.style.display = "block";
+        barChart2.style.display = "none";
     }
 });
 
@@ -18,28 +18,36 @@ document.getElementById("swapbtnline").addEventListener("click", () => {
 // fonctions du bouton de gauche
 document.getElementById("swapbtnmap").addEventListener("click", () => {
     const line = document.getElementById("thelineone");
-    const mapDiv = document.getElementById("carte");   
+    const mapDiv = document.getElementById("carte");
+
+    // animation and zdog
+    const animationBox = document.getElementById("animation");
     const zdogCanvas = document.querySelector(".zdog-canvas");
+
     const mapVisible = getComputedStyle(mapDiv).display !== "none";
-    const animation = document.querySelector("animation")
 
     if (mapVisible) {
-        // switch entre map et line chart
+        // transition map a line graph
         mapDiv.style.display = "none";
         line.style.display = "block";
-        animation.style.display = "none"
+
+        // cache l<animation
+        animationBox.style.display = "none";
+
+        // révèle l'animation zdog
         zdogCanvas.style.display = "block";
-        pulseCircle.style.display = "block";
-        pulseAnimation.restart();
     } else {
-        // toggle la visibilité
+        // transition line chart à map
         line.style.display = "none";
         mapDiv.style.display = "block";
-        animation.style.display = "flex";
+
+        // montre le carré qui spin
+        animationBox.style.display = "flex";
+
+        // cache le zdog
         zdogCanvas.style.display = "none";
-        pulseCircle.style.display = "none";
-        pulseAnimation.pause();
     }
 });
+
 
 
