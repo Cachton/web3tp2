@@ -9,7 +9,6 @@ new Chart(document.getElementById("maps_radar_canvas"), {
         datasets: [{
             label: "TOTAL MAP WINS",
             data: [6, 12, 8, 17, 9, 30, 15, 6],
-            backgroundColor: "rgba(255, 255, 255, 0.3)",
             borderColor: "white",
             borderWidth: 3,
             pointBackgroundColor: "white"
@@ -39,7 +38,7 @@ const barChart1 = new Chart(document.getElementById("theBarOne01"), {
         datasets: [{
             label: "SEASON STATS",
             data: [200, 103, 5, 98],
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
+            backgroundColor: "white",
             borderWidth: 2
         }]
     },
@@ -62,7 +61,7 @@ const barChart2 = new Chart(document.getElementById("theBarOne02"), {
         datasets: [{
             label: "SEASON STATS",
             data: [3196, 3099, 1134, 4271],
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
+            backgroundColor: "white",
             borderWidth: 2
         }]
     },
@@ -76,21 +75,6 @@ const barChart2 = new Chart(document.getElementById("theBarOne02"), {
         plugins: { legend: { labels: { color: "white" } } }
     }
 });
-
-// toggle les deux bar charts en haut à droite
-document.getElementById("swapbtnline").addEventListener("click", () => {
-    const c1 = document.getElementById("theBarOne01");
-    const c2 = document.getElementById("theBarOne02");
-
-    if (c1.style.display !== "none") {
-        c1.style.display = "none";
-        c2.style.display = "block";
-    } else {
-        c1.style.display = "block";
-        c2.style.display = "none";
-    }
-});
-
 
 // line
 const lineChart = new Chart(document.getElementById("thelineone"), {

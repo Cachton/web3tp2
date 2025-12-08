@@ -1,3 +1,12 @@
+:root {
+  --bs-dark: #0a0a0a;  
+    font-size: 1.2rem; 
+}
+
+body {
+    background: #000;
+}
+
 /* grille  */
 .grid_tp {
     display: grid;
@@ -13,7 +22,7 @@
 
 /* style des boites */
 .carre {
-    background-color: #222;
+    background-color: #0a0a0a;
     border: 2px solid white;
     border-radius: 12px;
     overflow: hidden;
@@ -21,6 +30,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    box-shadow: 0 0 10px 1px white
 }
 
 /* graphiques dans les boites */
@@ -34,18 +44,65 @@
     padding: 10px 20px;
     font-size: 1.2rem;
     color: white;
-    background-color: #444;
+    background-color: #0a0a0a;
     border: 2px solid white;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
+/* hover des boutons*/
 .en_bas_droite button:hover {
-    background-color: #666;
+    background-color: white;
+    color: black;
 }
 
+/* les cartes remplissent l<espace disponible*/
 #carte,
 #thelineone {
     width: 100%;
     height: 100%;
+}
+
+/*encadr/ bas à droite*/
+.en_bas_droite {
+    display: flex;
+    flex-direction: row;
+}
+
+/* div separe en trois */
+.bas_droite_gauche,
+.bas_droite_milieu,
+.bas_droite_droite {
+    flex: 1;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*petite ligne*/
+.bas_droite_gauche {
+    border-right: 2px solid white;
+}
+.bas_droite_droite {
+    border-left: 2px solid white;
+}
+
+
+.animation {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+
+.zdog-canvas {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 70%;
+  max-height: 150px;
+  margin: auto;
+}
+
+svg {
+    box-shadow: 0 0 20px 1px white;
 }

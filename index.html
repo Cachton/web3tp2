@@ -17,9 +17,11 @@
   <script src="./src/js/maplibre.js" type="module"></script>
   <script src="./src/js/tonejs.js" type="module"></script>
   <script src="./src/js/vfx.js" type="module"></script>
-
+  <script src="./src/js/zdog.js" type="module"></script>
+  <link href="./node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
-<link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
+  <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
+
 </head>
 
 <body>
@@ -44,13 +46,29 @@
 
     </div>
 
-
     <!-- case bas droite -->
     <div class="carre en_bas_droite">
-      <button id="swapbtnline">Action Graph haut droite</button>
-      <button id="swapbtnmap">Action Graph gauche</button>
-    </div>
+      <div class="bas_droite_gauche">
+        <button id="swapbtnmap"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.5.5 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.5.5 0 0 0-.196 0zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1z"/>
+</svg></button>
+      </div>
 
+      <div class="bas_droite_milieu">
+        <div class="animation" id="animation">
+          <div class="pulse-circle" id="pulseCircle"></div>
+        </div>
+        <div>
+          <canvas class="zdog-canvas" style="display: none;"></canvas>
+        </div>
+      </div>
+      <div class="bas_droite_droite">
+        <button id="swapbtnline"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-bar-graph-fill" viewBox="0 0 16 16">
+  <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5m-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z"/>
+</svg></button>
+      </div>
+
+    </div>
 
   </main>
 </body>
