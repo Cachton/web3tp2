@@ -3,6 +3,21 @@
     font-size: 1.2rem;
 }
 
+@font-face {
+    font-family: 'ledlight';
+    /* A unique name for your font */
+    src: url('../../assets/font/LEDLIGHT.otf') format('opentype');
+    font-weight: normal;
+    /* Define the weight if applicable */
+    font-style: normal;
+    /* Define the style if applicable */
+}
+
+* {
+    font-family: 'ledlight', sans-serif;
+
+}
+
 html,
 body {
     overflow-x: hidden;
