@@ -31,12 +31,12 @@ hoverButtons.forEach(btn => {
 const clickSynth = new Tone.MembraneSynth({
     pitchDecay: 0.02,
     octaves: 4,
-    envelope: { attack: 0.001, decay: 0.2, sustain: 0 }
+    envelope: { attack: 0.01, decay: 0.3, sustain: 0 }
 }).toDestination();
 
 // fonction son de clic
 function playClickSound() {
-    clickSynth.triggerAttackRelease("C4", "16n");
+    clickSynth.triggerAttackRelease("C5", "8n");
 }
 
 // lier aux boutons
